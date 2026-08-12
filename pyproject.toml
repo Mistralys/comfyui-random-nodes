@@ -1,0 +1,15 @@
+[project]
+name = "comfyui-random-nodes"
+version = "1.0.0"
+description = "ComfyUI V3 custom nodes to generate random integer and float values."
+license = "MIT"
+requires-python = ">=3.10"
+authors = [
+    { name = "Mistralys" },
+]
+
+[project.urls]
+Repository = "https://github.com/Mistralys/comfyui-random-nodes"
+
+[tool.comfy]
+PublisherId = "Mistralys"
