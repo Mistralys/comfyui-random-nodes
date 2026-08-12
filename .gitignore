@@ -216,3 +216,9 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# MCP Ledger Temporary Files
+/docs/agents/**/audit.md
+/docs/agents/**/design-review.md
+/docs/agents/**/work-packages-draft.md
+/docs/agents/**/research-brief.md
