@@ -1,79 +1,40 @@
-# comfyui-random-nodes
+# ComfyUI Random Nodes
 
-Selection of ComfyUI V3 custom nodes to generate random numbers, with interactive "New random value" / "Use current" buttons for locking in a generated value.
+Two lightweight nodes that bring proper "roll the dice" randomness to your ComfyUI workflows — without wiring up seeds, primitives, or extra math nodes just to get a random number.
+
+## Random Numbers, Without the Fuss
+
+Need a random integer to pick from a list, or a random float to jitter a value between runs? **Random Int** and **Random Float** drop straight into your workflow and generate a value in the range you set. A single `randomized` toggle controls the behavior: flip it on and the node rolls a new value every run; flip it off and it keeps returning the last one, so you can lock in a result you liked without disconnecting anything.
+
+## Features
+
+- 🎲 **Two focused nodes** — `Random Int` for whole numbers, `Random Float` for decimals with precision and step control.
+- 🔁 **Randomize on demand** — toggle `randomized` to generate a fresh value each run, or freeze it to keep reusing the current one.
+- 🖱️ **One-click controls** — "New random value" and "Use current" buttons let you roll or lock a value directly from the node, no extra wiring needed.
+- 📐 **Fine-grained float control** — set decimal precision and snap results to a step grid (e.g. `0.05` increments).
+- 🔌 **Every input doubles as an output** — all inputs are passed through, so you can wire them into other nodes without splitting your connections or repeating values.
+- 🪶 **Zero dependencies** — pure Python standard library, nothing extra to install.
 
 ## Requirements
 
 - ComfyUI with V3 API support (`comfy_api.latest`)
 - Python 3.10+
-- No external (pip) dependencies
 
-## Installation
+## Quick Start
 
-Clone or copy this repository into your ComfyUI `custom_nodes/` directory, then restart ComfyUI.
+Clone this repository directly into your ComfyUI `custom_nodes/` folder, then restart ComfyUI:
 
-## Nodes
+```bash
+cd ComfyUI/custom_nodes
+git clone https://github.com/Mistralys/comfyui-random-nodes.git
+```
 
-Both nodes appear under the **random** category.
+Once ComfyUI restarts, find the nodes by right-clicking the canvas and selecting **Add Node → random**, then pick **Random Int** or **Random Float**. Click **New random value** to roll, or **Use current** to keep what you've got.
 
-### Random Int
+## Learn More
 
-Generates a random integer value within a range.
-
-**Inputs**
-
-| Name | Type | Notes |
-|---|---|---|
-| `range_from` | Int | Minimum value (default `0`). Negative values allowed. |
-| `range_to` | Int | Maximum value (default `1`). Negative values allowed. |
-| `value` (widget only) | Int | The randomized value (default `0`). |
-| `randomized` (widget only) | Boolean | When `True`, generates a new random value on the next run. |
-
-**Buttons**
-
-- **New random value** — sets `value` to a random int within range and sets `randomized` to `false`.
-- **Use current: {N}** — sets `value` to the last generated int and sets `randomized` to `false`.
-
-**Outputs**
-
-| Name | Type | Notes |
-|---|---|---|
-| `VALUE` | Int | The generated (or stored) value. |
-| `RANGE_FROM` | Int | Passthrough of `range_from`. |
-| `RANGE_TO` | Int | Passthrough of `range_to`. |
-
-### Random Float
-
-Generates a random float value within a range, with precision and step control.
-
-**Inputs**
-
-| Name | Type | Notes |
-|---|---|---|
-| `range_from` | Float | Minimum value (default `0.0`). Negative values allowed. |
-| `range_to` | Float | Maximum value (default `1.0`). Negative values allowed. |
-| `precision` | Int | Number of decimal places (default `2`, minimum `1`). |
-| `step` | Float | Snaps generated values to this step grid (default `0.0` = no stepping). |
-| `value` (widget only) | Float | The randomized value (default `0.0`). |
-| `randomized` (widget only) | Boolean | When `True`, generates a new random value on the next run. |
-
-**Buttons**
-
-- **New random value** — sets `value` to a random float within range and sets `randomized` to `false`.
-- **Use current: {N}** — sets `value` to the last generated float and sets `randomized` to `false`.
-
-**Outputs**
-
-| Name | Type | Notes |
-|---|---|---|
-| `VALUE` | Float | The generated (or stored) value. |
-| `RANGE_FROM` | Float | Passthrough of `range_from`. |
-| `RANGE_TO` | Float | Passthrough of `range_to`. |
-| `PRECISION` | Int | Passthrough of `precision`. |
-| `STEP` | Float | Passthrough of `step`. |
-
-## Behavior Notes
-
-- Both nodes generate a new value only when `randomized` is `True`; otherwise they return the stored `value`.
-- Caching is controlled via `fingerprint_inputs`: it forces re-execution when `randomized=True` and allows caching (based on `value`) when `randomized=False`.
-- `range_from == range_to` is a valid input and returns the single possible value.
+| Resource | Description |
+|----------|-------------|
+| [Project Manifest](docs/agents/project-manifest/README.md) | Technical reference: node schemas, data flow, and design decisions |
+| [changelog.md](changelog.md) | Version history and notable changes |
+| [LICENSE](LICENSE) | MIT license |
