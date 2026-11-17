@@ -14,6 +14,7 @@ These require explicit user approval to change.
 ## Behavioral Invariants
 
 - **Randomization control** — each node exposes a socketless `randomized` boolean input. `True` generates a new random value on execution; `False` returns the stored `value` widget value unchanged. There is no seed input.
+  - **Decision (2026-11-17): seeds are deferred, and not to be retrofitted.** The existing nodes stay seedless. The stored `value` widget already makes workflows and image metadata reproducible, so a seed adds nothing for single nodes. The one identified use case — driving several random nodes from one master seed — has not been needed yet. If it is ever needed, it ships as **new, separate seed-aware node variants** (e.g. `Mistralys_SeededRandomInt`, class `SeededRandomIntNode`), never as a `seed` input added to `RandomIntNode`, `RandomFloatNode`, or `RandomFloatFromPresetNode`. Building such variants still requires explicit user approval (see Project Philosophy).
 - **Conditional caching via `fingerprint_inputs`** — each node's `fingerprint_inputs()` returns `time.time()` when `randomized=True` (forces re-execution every run) and a deterministic fingerprint derived from `value` when `randomized=False` (allows ComfyUI to cache the result). `not_idempotent=True` is not used, since these nodes are only conditionally non-reproducible.
 - **Equal ranges permitted** — `range_from == range_to` is a valid input and returns the single possible value; it is not rejected by `validate_inputs`.
 

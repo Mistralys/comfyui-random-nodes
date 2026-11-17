@@ -141,7 +141,7 @@ These decisions are documented in `constraints.md` and are **not negotiable** wi
 
 - **V3 API only** — no V1 compatibility layer.
 - **No external dependencies** — stdlib (`random`, `math`, etc.) and ComfyUI builtins only.
-- **`randomized` boolean toggle, no seed input** — a socketless `randomized` boolean controls generation: `True` generates a new value, `False` returns the stored `value` widget value.
+- **`randomized` boolean toggle, no seed input** — a socketless `randomized` boolean controls generation: `True` generates a new value, `False` returns the stored `value` widget value. Any future seed support must be a new, separate node variant (e.g. `Mistralys_SeededRandomInt`), never a seed input on the existing nodes.
 - **Conditional `fingerprint_inputs` caching** — `fingerprint_inputs()` returns `time.time()` when `randomized=True` (forces re-execution) and a deterministic fingerprint when `randomized=False` (allows caching). `not_idempotent=True` is not used.
 - **Author prefix `Mistralys_`** — all node IDs use this prefix (e.g. `Mistralys_RandomInt`).
 - **Node category `random`** — all nodes share this flat category string.
