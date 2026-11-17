@@ -8,12 +8,18 @@ Need a random integer to pick from a list, or a random float to jitter a value b
 
 ## Features
 
-- 🎲 **Two focused nodes** — `Random Int` for whole numbers, `Random Float` for decimals with precision and step control.
-- 🔁 **Randomize on demand** — toggle `randomized` to generate a fresh value each run, or freeze it to keep reusing the current one.
-- 🖱️ **One-click controls** — "New random value" and "Use current" buttons let you roll or lock a value directly from the node, no extra wiring needed.
-- 📐 **Fine-grained float control** — set decimal precision and snap results to a step grid (e.g. `0.05` increments).
-- 🔌 **Every input doubles as an output** — all inputs are passed through, so you can wire them into other nodes without splitting your connections or repeating values.
-- 🪶 **Zero dependencies** — pure Python standard library, nothing extra to install.
+- **Type-Focused nodes** — `Random Int` for whole numbers, `Random Float` for decimals with precision and step control.
+- **Randomize on demand** — toggle `randomized` to generate a fresh value each run, or freeze it to keep reusing the current one.
+- **One-click controls** — "New random value" and "Use current" buttons let you roll or lock a value directly from the node, no extra wiring needed.
+- **Fine-grained float control** — set decimal precision and snap results to a step grid (e.g. `0.05` increments).
+- **Every input doubles as an output** — all inputs are passed through, so you can wire them into other nodes without splitting your connections or repeating values.
+- **Zero dependencies** — pure Python standard library, nothing extra to install.
+
+## Screenshots
+
+<img src="docs/screenshots/RandomInt.png" alt="Alt text" width="340">  
+
+<img src="docs/screenshots/RandomFloat.png" alt="Alt text" width="340">
 
 ## Requirements
 
