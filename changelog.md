@@ -1,7 +1,7 @@
 # ComfyUI Random Nodes - Changelog
 
-## Unreleased
-- Added the Random Float from Preset node to select a float value from a user-defined comma-separated list, with fixed/random/cycle selection modes.
+## v1.1.0 - Random Floats from Preset Node **WIP, UNRELEASED**
+- Added the Random Float from Preset node to select a float value from a  list of values.
 
 ## v1.0.0 - Initial Release
 - Added the Random Int node to generate random integers within a range.
