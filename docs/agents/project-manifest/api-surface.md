@@ -33,6 +33,8 @@ None.
 | `RandomFloatNode` | `Mistralys_RandomFloat` | Random Float | `random` | `validate_inputs` |
 | `RandomFloatFromPresetNode` | `Mistralys_RandomFloatFromPreset` | Random Float from Preset | `random` | `validate_inputs` |
 
+All node schemas also set `description` and `search_aliases` (alternative search terms).
+
 ### Node Detail
 
 #### `RandomIntNode` — `Mistralys_RandomInt` / "Random Int"

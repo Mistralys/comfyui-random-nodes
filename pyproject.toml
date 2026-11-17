@@ -1,6 +1,6 @@
 [project]
 name = "comfyui-random-nodes"
-version = "1.0.0"
+version = "1.1.0"
 description = "ComfyUI V3 custom nodes to generate random integer and float values."
 license = "MIT"
 requires-python = ">=3.10"

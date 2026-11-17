@@ -23,6 +23,7 @@ These require explicit user approval to change.
 - **Reference patterns:** Follow `skill_test_nodes/` in the companion workspace (`comfyui-custom-node-skills/skill_test_nodes/`) for V3 API usage patterns.
 - **Node ID prefix:** `Mistralys_` — all node IDs use this author prefix (e.g. `Mistralys_RandomInt`).
 - **Node category:** `random` — all nodes use this flat category string.
+- **Node metadata:** every schema sets `description` and `search_aliases`. Each node also has a help page `docs/<node_id>.md` and translations in `locales/<lang>/nodeDefs.json` (keyed by node ID). Keep all of them in step when inputs, outputs, or tooltips change.
 - **Testing strategy — two tiers:**
   - **Unit tests (mock-based):** Standalone Python scripts that mock ComfyUI internals. Run without a live ComfyUI instance. Use `verify_*.py` naming; place in the `tests/` subdirectory.
   - **Manual integration tests:** Nodes must also be tested inside a live ComfyUI instance to validate UI rendering, widget behaviour, and actual output values. Unit tests cannot replace this layer.
