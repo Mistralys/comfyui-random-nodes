@@ -1,0 +1,51 @@
+{
+    "Mistralys_RandomInt": {
+        "display_name": "Intero casuale",
+        "description": "Genera un intero casuale all'interno di un intervallo, oppure riutilizza il valore memorizzato.",
+        "inputs": {
+            "range_from": { "display_name": "Da", "tooltip": "Valore intero minimo da generare." },
+            "range_to": { "display_name": "A", "tooltip": "Valore intero massimo da generare." },
+            "value": { "display_name": "Valore", "tooltip": "Il valore casuale. Riutilizzato quando «randomized» è disattivato." },
+            "randomized": { "display_name": "Casuale", "tooltip": "Indica se generare un nuovo valore casuale alla prossima esecuzione." }
+        },
+        "outputs": {
+            "0": { "name": "VALORE", "tooltip": "Il valore intero generato (o memorizzato)." },
+            "1": { "name": "DA", "tooltip": "Valore di ingresso inoltrato invariato." },
+            "2": { "name": "A", "tooltip": "Valore di ingresso inoltrato invariato." }
+        }
+    },
+    "Mistralys_RandomFloat": {
+        "display_name": "Decimale casuale",
+        "description": "Genera un numero decimale casuale all'interno di un intervallo, con precisione e passo, oppure riutilizza il valore memorizzato.",
+        "inputs": {
+            "range_from": { "display_name": "Da", "tooltip": "Valore minimo da generare." },
+            "range_to": { "display_name": "A", "tooltip": "Valore massimo da generare." },
+            "precision": { "display_name": "Precisione", "tooltip": "Numero di cifre decimali." },
+            "step": { "display_name": "Passo", "tooltip": "Allinea i valori generati a questa griglia. 0.0 significa nessun passo." },
+            "value": { "display_name": "Valore", "tooltip": "Il valore casuale. Riutilizzato quando «randomized» è disattivato." },
+            "randomized": { "display_name": "Casuale", "tooltip": "Indica se generare un nuovo valore casuale alla prossima esecuzione." }
+        },
+        "outputs": {
+            "0": { "name": "VALORE", "tooltip": "Il valore generato (o memorizzato)." },
+            "1": { "name": "DA", "tooltip": "Valore di ingresso inoltrato invariato." },
+            "2": { "name": "A", "tooltip": "Valore di ingresso inoltrato invariato." },
+            "3": { "name": "PRECISIONE", "tooltip": "Valore di ingresso inoltrato invariato." },
+            "4": { "name": "PASSO", "tooltip": "Valore di ingresso inoltrato invariato." }
+        }
+    },
+    "Mistralys_RandomFloatFromPreset": {
+        "display_name": "Decimale casuale da preimpostazioni",
+        "description": "Sceglie un numero decimale da un elenco di preimpostazioni: fisso, casuale o scorrendo l'elenco.",
+        "inputs": {
+            "presets": { "display_name": "Preimpostazioni", "tooltip": "Elenco di valori decimali separati da virgole." },
+            "value": { "display_name": "Valore", "tooltip": "Il valore scelto o casuale. Riutilizzato nella modalità «fixed»." },
+            "mode": { "display_name": "Modalità", "tooltip": "fixed: usa il valore memorizzato. random: scelta casuale. cycle: scorre le preimpostazioni in ordine." },
+            "cycle_index": { "display_name": "Indice del ciclo", "tooltip": "Posizione attuale nel ciclo. Avanza automaticamente nella modalità «cycle»; modificabile manualmente." }
+        },
+        "outputs": {
+            "0": { "name": "VALORE", "tooltip": "Il valore scelto (o estratto a caso)." },
+            "1": { "name": "PREIMPOSTAZIONI", "tooltip": "Valore delle preimpostazioni inoltrato invariato." },
+            "2": { "name": "INDICE", "tooltip": "Indice della preimpostazione scelta (da 0). Nella modalità «fixed», inoltra cycle_index." }
+        }
+    }
+}

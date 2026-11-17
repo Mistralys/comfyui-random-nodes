@@ -1,0 +1,51 @@
+{
+    "Mistralys_RandomInt": {
+        "display_name": "Entier aléatoire",
+        "description": "Génère un entier aléatoire dans une plage, ou réutilise la valeur enregistrée.",
+        "inputs": {
+            "range_from": { "display_name": "De", "tooltip": "Valeur entière minimale à générer." },
+            "range_to": { "display_name": "À", "tooltip": "Valeur entière maximale à générer." },
+            "value": { "display_name": "Valeur", "tooltip": "La valeur aléatoire. Réutilisée lorsque « randomized » est désactivé." },
+            "randomized": { "display_name": "Aléatoire", "tooltip": "Génère ou non une nouvelle valeur aléatoire à la prochaine exécution." }
+        },
+        "outputs": {
+            "0": { "name": "VALEUR", "tooltip": "La valeur entière générée (ou enregistrée)." },
+            "1": { "name": "DE", "tooltip": "Valeur d'entrée transmise telle quelle." },
+            "2": { "name": "À", "tooltip": "Valeur d'entrée transmise telle quelle." }
+        }
+    },
+    "Mistralys_RandomFloat": {
+        "display_name": "Décimal aléatoire",
+        "description": "Génère un nombre décimal aléatoire dans une plage, avec précision et pas, ou réutilise la valeur enregistrée.",
+        "inputs": {
+            "range_from": { "display_name": "De", "tooltip": "Valeur minimale à générer." },
+            "range_to": { "display_name": "À", "tooltip": "Valeur maximale à générer." },
+            "precision": { "display_name": "Précision", "tooltip": "Nombre de décimales." },
+            "step": { "display_name": "Pas", "tooltip": "Aligne les valeurs générées sur cette grille. 0.0 signifie aucun pas." },
+            "value": { "display_name": "Valeur", "tooltip": "La valeur aléatoire. Réutilisée lorsque « randomized » est désactivé." },
+            "randomized": { "display_name": "Aléatoire", "tooltip": "Génère ou non une nouvelle valeur aléatoire à la prochaine exécution." }
+        },
+        "outputs": {
+            "0": { "name": "VALEUR", "tooltip": "La valeur générée (ou enregistrée)." },
+            "1": { "name": "DE", "tooltip": "Valeur d'entrée transmise telle quelle." },
+            "2": { "name": "À", "tooltip": "Valeur d'entrée transmise telle quelle." },
+            "3": { "name": "PRÉCISION", "tooltip": "Valeur d'entrée transmise telle quelle." },
+            "4": { "name": "PAS", "tooltip": "Valeur d'entrée transmise telle quelle." }
+        }
+    },
+    "Mistralys_RandomFloatFromPreset": {
+        "display_name": "Décimal aléatoire parmi des préréglages",
+        "description": "Choisit un nombre décimal dans une liste de préréglages : fixe, aléatoire ou en parcourant la liste.",
+        "inputs": {
+            "presets": { "display_name": "Préréglages", "tooltip": "Liste de valeurs décimales séparées par des virgules." },
+            "value": { "display_name": "Valeur", "tooltip": "La valeur choisie ou aléatoire. Réutilisée en mode « fixed »." },
+            "mode": { "display_name": "Mode", "tooltip": "fixed : utilise la valeur enregistrée. random : choix aléatoire. cycle : parcourt les préréglages dans l'ordre." },
+            "cycle_index": { "display_name": "Index du cycle", "tooltip": "Position actuelle dans le cycle. Avance automatiquement en mode « cycle » ; modifiable manuellement." }
+        },
+        "outputs": {
+            "0": { "name": "VALEUR", "tooltip": "La valeur choisie (ou tirée au hasard)." },
+            "1": { "name": "PRÉRÉGLAGES", "tooltip": "Valeur des préréglages transmise telle quelle." },
+            "2": { "name": "INDEX", "tooltip": "Index du préréglage choisi (à partir de 0). En mode « fixed », transmet cycle_index." }
+        }
+    }
+}

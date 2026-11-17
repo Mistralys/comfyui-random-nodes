@@ -1,0 +1,51 @@
+{
+    "Mistralys_RandomInt": {
+        "display_name": "Entero aleatorio",
+        "description": "Genera un entero aleatorio dentro de un rango, o reutiliza el valor almacenado.",
+        "inputs": {
+            "range_from": { "display_name": "Desde", "tooltip": "Valor entero mínimo a generar." },
+            "range_to": { "display_name": "Hasta", "tooltip": "Valor entero máximo a generar." },
+            "value": { "display_name": "Valor", "tooltip": "El valor aleatorio. Se reutiliza cuando «randomized» está desactivado." },
+            "randomized": { "display_name": "Aleatorio", "tooltip": "Si se genera un nuevo valor aleatorio en la próxima ejecución." }
+        },
+        "outputs": {
+            "0": { "name": "VALOR", "tooltip": "El valor entero generado (o almacenado)." },
+            "1": { "name": "DESDE", "tooltip": "Valor de entrada transmitido sin cambios." },
+            "2": { "name": "HASTA", "tooltip": "Valor de entrada transmitido sin cambios." }
+        }
+    },
+    "Mistralys_RandomFloat": {
+        "display_name": "Decimal aleatorio",
+        "description": "Genera un número decimal aleatorio dentro de un rango, con precisión y paso, o reutiliza el valor almacenado.",
+        "inputs": {
+            "range_from": { "display_name": "Desde", "tooltip": "Valor mínimo a generar." },
+            "range_to": { "display_name": "Hasta", "tooltip": "Valor máximo a generar." },
+            "precision": { "display_name": "Precisión", "tooltip": "Número de decimales." },
+            "step": { "display_name": "Paso", "tooltip": "Ajusta los valores generados a esta cuadrícula. 0.0 significa sin paso." },
+            "value": { "display_name": "Valor", "tooltip": "El valor aleatorio. Se reutiliza cuando «randomized» está desactivado." },
+            "randomized": { "display_name": "Aleatorio", "tooltip": "Si se genera un nuevo valor aleatorio en la próxima ejecución." }
+        },
+        "outputs": {
+            "0": { "name": "VALOR", "tooltip": "El valor generado (o almacenado)." },
+            "1": { "name": "DESDE", "tooltip": "Valor de entrada transmitido sin cambios." },
+            "2": { "name": "HASTA", "tooltip": "Valor de entrada transmitido sin cambios." },
+            "3": { "name": "PRECISIÓN", "tooltip": "Valor de entrada transmitido sin cambios." },
+            "4": { "name": "PASO", "tooltip": "Valor de entrada transmitido sin cambios." }
+        }
+    },
+    "Mistralys_RandomFloatFromPreset": {
+        "display_name": "Decimal aleatorio de preajustes",
+        "description": "Elige un número decimal de una lista de preajustes: fijo, aleatorio o recorriendo la lista.",
+        "inputs": {
+            "presets": { "display_name": "Preajustes", "tooltip": "Lista de valores decimales separados por comas." },
+            "value": { "display_name": "Valor", "tooltip": "El valor elegido o aleatorio. Se reutiliza en el modo «fixed»." },
+            "mode": { "display_name": "Modo", "tooltip": "fixed: usa el valor almacenado. random: elige al azar. cycle: recorre los preajustes en orden." },
+            "cycle_index": { "display_name": "Índice del ciclo", "tooltip": "Posición actual en el ciclo. Avanza automáticamente en el modo «cycle»; se puede ajustar manualmente." }
+        },
+        "outputs": {
+            "0": { "name": "VALOR", "tooltip": "El valor elegido (o seleccionado al azar)." },
+            "1": { "name": "PREAJUSTES", "tooltip": "Valor de los preajustes transmitido sin cambios." },
+            "2": { "name": "ÍNDICE", "tooltip": "Índice del preajuste elegido (desde 0). En el modo «fixed», transmite cycle_index." }
+        }
+    }
+}

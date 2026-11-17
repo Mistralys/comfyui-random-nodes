@@ -1,0 +1,51 @@
+{
+    "Mistralys_RandomInt": {
+        "display_name": "Zufällige Ganzzahl",
+        "description": "Erzeugt eine zufällige Ganzzahl in einem Bereich oder verwendet den gespeicherten Wert erneut.",
+        "inputs": {
+            "range_from": { "display_name": "Von", "tooltip": "Kleinster zu erzeugender Ganzzahlwert." },
+            "range_to": { "display_name": "Bis", "tooltip": "Größter zu erzeugender Ganzzahlwert." },
+            "value": { "display_name": "Wert", "tooltip": "Der zufällige Wert. Wird wiederverwendet, wenn „randomized“ aus ist." },
+            "randomized": { "display_name": "Zufällig", "tooltip": "Ob beim nächsten Durchlauf ein neuer Zufallswert erzeugt wird." }
+        },
+        "outputs": {
+            "0": { "name": "WERT", "tooltip": "Der erzeugte (oder gespeicherte) Ganzzahlwert." },
+            "1": { "name": "VON", "tooltip": "Durchgereichter Eingabewert." },
+            "2": { "name": "BIS", "tooltip": "Durchgereichter Eingabewert." }
+        }
+    },
+    "Mistralys_RandomFloat": {
+        "display_name": "Zufällige Fließkommazahl",
+        "description": "Erzeugt eine zufällige Fließkommazahl in einem Bereich, mit Genauigkeit und Schrittweite, oder verwendet den gespeicherten Wert erneut.",
+        "inputs": {
+            "range_from": { "display_name": "Von", "tooltip": "Kleinster zu erzeugender Wert." },
+            "range_to": { "display_name": "Bis", "tooltip": "Größter zu erzeugender Wert." },
+            "precision": { "display_name": "Genauigkeit", "tooltip": "Anzahl der Dezimalstellen." },
+            "step": { "display_name": "Schrittweite", "tooltip": "Erzeugte Werte auf dieses Raster runden. 0.0 bedeutet keine Schrittweite." },
+            "value": { "display_name": "Wert", "tooltip": "Der zufällige Wert. Wird wiederverwendet, wenn „randomized“ aus ist." },
+            "randomized": { "display_name": "Zufällig", "tooltip": "Ob beim nächsten Durchlauf ein neuer Zufallswert erzeugt wird." }
+        },
+        "outputs": {
+            "0": { "name": "WERT", "tooltip": "Der erzeugte (oder gespeicherte) Wert." },
+            "1": { "name": "VON", "tooltip": "Durchgereichter Eingabewert." },
+            "2": { "name": "BIS", "tooltip": "Durchgereichter Eingabewert." },
+            "3": { "name": "GENAUIGKEIT", "tooltip": "Durchgereichter Eingabewert." },
+            "4": { "name": "SCHRITTWEITE", "tooltip": "Durchgereichter Eingabewert." }
+        }
+    },
+    "Mistralys_RandomFloatFromPreset": {
+        "display_name": "Zufällige Fließkommazahl aus Vorgaben",
+        "description": "Wählt eine Fließkommazahl aus einer Liste von Vorgaben: fest, zufällig oder der Reihe nach.",
+        "inputs": {
+            "presets": { "display_name": "Vorgaben", "tooltip": "Kommagetrennte Liste von Fließkommawerten zur Auswahl." },
+            "value": { "display_name": "Wert", "tooltip": "Der gewählte oder zufällige Wert. Wird im Modus „fixed“ wiederverwendet." },
+            "mode": { "display_name": "Modus", "tooltip": "fixed: gespeicherten Wert verwenden. random: zufällig wählen. cycle: Vorgaben der Reihe nach durchlaufen." },
+            "cycle_index": { "display_name": "Zyklusindex", "tooltip": "Aktuelle Position im Zyklus. Rückt im Modus „cycle“ automatisch vor; manuell anpassbar." }
+        },
+        "outputs": {
+            "0": { "name": "WERT", "tooltip": "Der gewählte (oder zufällig gewählte) Wert." },
+            "1": { "name": "VORGABEN", "tooltip": "Durchgereichter Wert der Vorgaben." },
+            "2": { "name": "INDEX", "tooltip": "Index der gewählten Vorgabe (ab 0). Im Modus „fixed“ der durchgereichte Zyklusindex." }
+        }
+    }
+}
