@@ -7,10 +7,13 @@ from unittest.mock import MagicMock
 class _io:
     class Schema:
         def __init__(self, *, node_id, display_name, category, inputs=None, outputs=None,
-                     is_output_node=False, not_idempotent=False):
+                     is_output_node=False, not_idempotent=False,
+                     description=None, search_aliases=None):
             self.node_id = node_id
             self.display_name = display_name
             self.category = category
+            self.description = description
+            self.search_aliases = search_aliases or []
             self.inputs = inputs or []
             self.outputs = outputs or []
 
@@ -96,6 +99,8 @@ def fail(name, msg):
 schema = N.define_schema()
 assert schema.node_id == 'Mistralys_RandomFloatFromPreset', schema.node_id
 assert schema.category == 'random', schema.category
+assert schema.description, 'description must be set'
+assert schema.search_aliases, 'search_aliases must be set'
 ok("AC-01: node_id='Mistralys_RandomFloatFromPreset', category='random'")
 
 # AC-02: _parse_presets returns sorted unique floats from comma-separated input

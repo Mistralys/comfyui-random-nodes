@@ -54,6 +54,8 @@ class RandomIntNode(io.ComfyNode):
         return io.Schema(
             node_id="Mistralys_RandomInt",
             display_name="Random Int",
+            description="Generates a random integer within a range, or reuses the stored value.",
+            search_aliases=["random integer", "rand int", "randint"],
             category="random",
             inputs=[
                 io.Int.Input("range_from", default=0,
@@ -102,6 +104,8 @@ class RandomFloatNode(io.ComfyNode):
         return io.Schema(
             node_id="Mistralys_RandomFloat",
             display_name="Random Float",
+            description="Generates a random float within a range, with precision and step control, or reuses the stored value.",
+            search_aliases=["random decimal", "rand float", "random number"],
             category="random",
             inputs=[
                 io.Float.Input("range_from", default=0.0,
@@ -168,6 +172,8 @@ class RandomFloatFromPresetNode(io.ComfyNode):
         return io.Schema(
             node_id="Mistralys_RandomFloatFromPreset",
             display_name="Random Float from Preset",
+            description="Picks a float from a list of presets: fixed, random or cycling through the list.",
+            search_aliases=["random preset", "float preset", "cycle presets", "random choice"],
             category="random",
             inputs=[
                 io.String.Input("presets",
