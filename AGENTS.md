@@ -116,6 +116,7 @@ comfyui-random-nodes/
   changelog.md          # Project changelog
   js/
     random_nodes.js      # Frontend extension: buttons + widget synchronization
+    docs/Mistralys_*.md  # In-app help pages, one per node (filename = node_id); must live in WEB_DIRECTORY
   locales/
     de/nodeDefs.json     # German node definition translations
     fr/nodeDefs.json     # French node definition translations
@@ -126,7 +127,6 @@ comfyui-random-nodes/
     verify_random_float.py               # Mock-based unit tests for RandomFloatNode
     verify_random_float_from_preset.py   # Mock-based unit tests for RandomFloatFromPresetNode
   docs/
-    Mistralys_*.md       # In-app help pages, one per node (filename = node_id)
     agents/
       project-manifest/ # Structured codebase overview for AI agents
         README.md       #   Manifest index

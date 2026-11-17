@@ -3,7 +3,7 @@
 ## v1.1.0 - Random Floats from Preset Node **WIP, UNRELEASED**
 - Added the Random Float from Preset node to select a float value from a  list of values.
 - Added a description and search aliases to all node schemas.
-- Added in-app help pages (`docs/<node_id>.md`) for all nodes.
+- Added in-app help pages (`js/docs/<node_id>.md`) for all nodes.
 - Added German, French, Spanish and Italian translations (`locales/`).
 - Aligned the `pyproject.toml` version with the changelog (1.1.0).
 
