@@ -6,6 +6,7 @@ from comfy_api.latest import ComfyExtension, io
 from .nodes import (
     RandomIntNode,
     RandomFloatNode,
+    RandomFloatFromPresetNode,
 )
 
 WEB_DIRECTORY = "./js"
@@ -17,6 +18,7 @@ class RandomNodesExtension(ComfyExtension):
         return [
             RandomIntNode,
             RandomFloatNode,
+            RandomFloatFromPresetNode,
         ]
 
 
