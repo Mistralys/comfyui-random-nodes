@@ -1,25 +1,32 @@
 # ComfyUI Random Nodes
 
-Two lightweight nodes that bring proper "roll the dice" randomness to your ComfyUI workflows — without wiring up seeds, primitives, or extra math nodes just to get a random number.
+Small, stable nodes for generating random numbers in ComfyUI workflows.
 
-## Random Numbers, Without the Fuss
+## What It Is
 
-Need a random integer to pick from a list, or a random float to jitter a value between runs? **Random Int** and **Random Float** drop straight into your workflow and generate a value in the range you set. A single `randomized` toggle controls the behavior: flip it on and the node rolls a new value every run; flip it off and it keeps returning the last one, so you can lock in a result you liked without disconnecting anything.
+Three nodes for when a workflow needs a random integer or float: **Random Int**, **Random Float** and **Random Float from Preset**. You set a range (or a list of presets) and the node produces a value, with no seed or math nodes to wire up. A `randomized` toggle (a `mode` setting on the preset node) decides whether each run produces a new value or reuses the last one.
 
 ## Features
 
-- **Type-Focused nodes** — `Random Int` for whole numbers, `Random Float` for decimals with precision and step control.
-- **Randomize on demand** — toggle `randomized` to generate a fresh value each run, or freeze it to keep reusing the current one.
-- **One-click controls** — "New random value" and "Use current" buttons let you roll or lock a value directly from the node, no extra wiring needed.
-- **Fine-grained float control** — set decimal precision and snap results to a step grid (e.g. `0.05` increments).
-- **Every input doubles as an output** — all inputs are passed through, so you can wire them into other nodes without splitting your connections or repeating values.
-- **Zero dependencies** — pure Python standard library, nothing extra to install.
+- **Random Int** generates whole numbers within a range.
+- **Random Float** generates decimals within a range, with settings for precision and step size (e.g. `0.05` increments).
+- **Random Float from Preset** picks from a comma-separated list of values. Its mode can be `fixed`, `random` or `cycle`, which steps through the list in order.
+- **Keep a result you like.** Turn `randomized` off to keep reusing the stored value.
+- **Roll from the node.** The **New random value** button generates a value and stores it, without queuing a run.
+- **Inputs are passed through** as outputs, so you can connect them to other nodes without duplicating values.
+- **No extra dependencies.** The nodes use the Python standard library and ComfyUI itself.
+
+## Design Philosophy
+
+These nodes are meant to be stable. Each one does a single job, and that job is not going to grow. Updates are limited to bug fixes and adjustments for changes in ComfyUI, so the setup of existing nodes stays as it is. Workflows that use them can rely on them continuing to work.
 
 ## Screenshots
 
-<img src="docs/screenshots/RandomInt.png" alt="Alt text" width="340">  
+<img src="docs/screenshots/RandomInt.png" alt="Node screenshot: Random Int" width="340">  
 
-<img src="docs/screenshots/RandomFloat.png" alt="Alt text" width="340">
+<img src="docs/screenshots/RandomFloat.png" alt="Node screenshot: Random Float" width="340">
+
+<img src="docs/screenshots/RandomFloatFromPreset.png" alt="Node screenshot: Random Float from Preset" width="340">
 
 ## Requirements
 
@@ -35,7 +42,7 @@ cd ComfyUI/custom_nodes
 git clone https://github.com/Mistralys/comfyui-random-nodes.git
 ```
 
-Once ComfyUI restarts, find the nodes by right-clicking the canvas and selecting **Add Node → random**, then pick **Random Int** or **Random Float**. Click **New random value** to roll, or **Use current** to keep what you've got.
+Once ComfyUI restarts, find the nodes by right-clicking the canvas and selecting **Add Node → random**, then pick one of the three nodes.
 
 ## Learn More
 
